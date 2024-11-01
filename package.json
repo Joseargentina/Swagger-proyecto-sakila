@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "node --watch src/server.js"
+    "start:local": "cross-env NODE_ENV=local node src/server.js",
+    "start:local_railway": "cross-env NODE_ENV=local_railway node src/server.js",
+    "start": "cross-env NODE_ENV=production node src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +18,9 @@
     "sequelize": "^6.37.4",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5"
   }
 }

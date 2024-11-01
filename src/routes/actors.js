@@ -40,7 +40,7 @@ router.get('/', async (req, res) => {
       res.status(404).send({ error: 'No se encontraron actores para listar' })
     }
   } catch (error) {
-    res.status(500).send({ error: 'Error en el servidor', description: "Mensaje de error detallado." })
+    res.status(500).send({ error, description: 'Mensaje de error detallado.' })
   }
 })
 
@@ -72,7 +72,7 @@ router.get('/films', async (req, res) => {
     )
     res.status(200).json(actors)
   } catch (error) {
-    res.status(500).send({ error: 'no se pudo crear la peli' })
+    res.status(500).send({ error: error.description })
   }
 })
 
